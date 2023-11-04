@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <style>
+    /* 👉 Task 1- Apply the reset found on this page: https://www.joshwcomeau.com/css/custom-css-reset/ */
+
+  </style>
+  <style>
+    /* 👉 Task 2- Target the body element.
+    Apply a font family of Arial to the body element.
+    The font property is inherited by descendant (nested) elements. */
+
+    /* 👉 Task 3- Target the element with id headerTop.
+    Apply white color to the text, some padding using px or rem units, and a dark background color. */
+
+    /* 👉 Task 4- Target the divs that are directly nested underneath the id headerTop.
+    Make them display as inline block, instead of block.
+    This will make them render on the same line. */
+
+    /* 👉 Task 5- Target the spans that are nested inside the id headerTop.
+    Make them have some margin on the right.
+    This will prevent the spans from crashing against one another. */
+
+    /* 👉 Task 6- Target the first span nested inside the element with id headerTop.
+    Make it have a font weight of bold, and transform the text to uppercase. */
+
+    /* 👉 Task 7- Target the id headerBottom.
+    Give it a bottom border of 1 pixel, solid gray, and a little bit of padding using px or rem units. */
+
+    /* 👉 Task 8- Target the divs that are nested directly inside the element with id headerBottom.
+    Make them display as inline block, instead of block.
+    This will cause them to render on the same line.
+    You can consolidate this rule with the one on step. 4 */
+
+    /* 👉 Task 9- Target the "Compose" button, although note it's a div instead an actual button.
+    Give it color, bold text, background, padding, border radius, margin right, and a cursor of pointer. */
+
+    /* 👉 Task 10- Research how to remove all the default styling of button elements.
+    Target the button elements inside the element with id headerBottom.
+    Remove all their styling, give them a bit of margin to the right, and a cursor of pointer. */
+
+    /* 👉 Task 11- Target the button element inside the id headerBottom that has a class of active
+    Make the font weight be bolder, and add a bottom border of 2 pixels solid color (you choose the color).
+    Add the class name to the "All mail" button. */
+
+    /* 👉 Task 12- Target all divs directly nested inside elements with a class of email,
+    and make them display as inline-block elements.
+    This will make each email render all its details in the same line*/
+
+    /* 👉 Task 13- Target the elements with a class of email.
+    Give them some padding, bigger padding to the left, and a bottom border of very light grey. */
+
+    /* 👉 Task 14- Target each div inside the element with a class of email.
+    Make the email author and the email subject take 35% of the width of the parent element.
+    Make the check, the date and the size take up 8% of the width of the parent element.
+    This will arrange the details in visible columns. */
+
+    /* 👉 Task 15- Target the second email and have its font weight be bold.
+    This will make it look "unread". */
+
+    /* Well done! Check the design file to make sure you are close enough. */
+
+  </style>
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="instructions">
+    <h1>HTML & CSS II</h1>
+    <p>Please load this file in VSCode and Chrome, and open the Elements tab, Sources sub-tab, in Chrome Dev Tools.</p>
+    <p>Work through the challenges found inside both style tags in this document.</p>
+    <p>You will find a screenshot of the end result inside the design folder.</p>
+    <p>You can now comment out the h1 and the p tags...</p>
+  </div>
+  <div>
+    <header>
+      <div id="headerTop">
+        <div>
+          <span>Super Mail</span>
+          <span>Jess</span>
+        </div>
+        <div>
+          <input type="text" placeholder="Search Mail" />
+        </div>
+      </div>
+      <div id="headerBottom">
+        <div>Compose</div>
+        <div>
+          <button>All mail</button>
+          <button>Unread</button>
+          <button>Pinned</button>
+          <button>VIPs</button>
+        </div>
+      </div>
+    </header>
+    <main id="emails">
+      <div class="email">
+        <div class="email-check"><input type="checkbox" /></div>
+        <div class="email-name">Carol Shaw</div>
+        <div class="email-subject">Your login link</div>
+        <div class="email-date">Feb 28</div>
+        <div class="email-size">16 KB</div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // ❗ Note: do not change ids or class names inside the main element
+    // or the following code to programmatically add emails will stop working
+    const emailData = [
+      { name: 'Ada Lovelace', subject: 'A new device is using your account', date: 'Feb 28', size: '2 KB' },
+      { name: 'Grace Hopper', subject: 'Undelivered mail returned to sender', date: 'Feb 27', size: '6 KB' },
+      { name: 'Carol Shaw', subject: 'Approve sign-in', date: 'Feb 25', size: '14 KB' },
+      { name: 'Edith Clarke', subject: 'Fwd: Invoice', date: 'Feb 24', size: '33 KB' },
+    ]
+    emailData.forEach(email => {
+      const clone = emails.querySelector('.email').cloneNode(true)
+      clone.querySelector('.email-name').textContent = email.name
+      clone.querySelector('.email-subject').textContent = email.subject
+      clone.querySelector('.email-date').textContent = email.date
+      clone.querySelector('.email-size').textContent = email.size
+      emails.append(clone)
+    })
+  </script>
+</body>
+
+</html>
